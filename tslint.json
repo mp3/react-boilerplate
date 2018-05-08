@@ -13,7 +13,8 @@
     "prettier": [
       true, {
         "singleQuote": true,
-        "semi": false
+        "semi": false,
+        "jsxBracketSameLine": false
       }
     ]
   }

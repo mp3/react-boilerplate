@@ -5,7 +5,7 @@ const devPort = process.env.port || 3000
 module.exports = {
   entry: {
     app: [
-      './src/index.ts'
+      './src/index.tsx'
     ]
   },
   output: {
@@ -23,7 +23,7 @@ module.exports = {
     rules: [
       {
         enforce: 'pre',
-        test: /\.ts$/,
+        test: /\.tsx?$/,
         loader: 'tslint-loader',
         exclude: /(node_modules)/,
         options: {
@@ -32,7 +32,7 @@ module.exports = {
         },
       },
       {
-        test: /\.ts$/,
+        test: /\.tsx?$/,
         use: 'ts-loader',
         exclude: /node_modules/,
       },
