@@ -8,6 +8,8 @@
     "tslint-plugin-prettier"
   ],
   "rules": {
+    "no-unused-variable": true,
+    "prefer-const": true,
     "prettier": [
       true, {
         "singleQuote": true,
