@@ -1,4 +1,5 @@
 import * as React from 'react'
+import { Route, Switch } from 'react-router'
 import { hot } from 'react-hot-loader'
 import { Provider } from 'react-redux'
 import styled from 'styled-components'
@@ -7,9 +8,7 @@ export default hot(module)((props: { store: any; children: any }) => {
   return (
     <Provider store={props.store}>
       <Layout>
-        <Layout$Menu>{/* <Menu /> */}</Layout$Menu>
-        <Layout$Header>{/* <Header /> */}</Layout$Header>
-        <Layout$Content>{props.children}</Layout$Content>
+        {props.children}
       </Layout>
     </Provider>
   )
@@ -26,18 +25,4 @@ export const Layout = styled.div`
   grid-template-areas:
     'menu header'
     'menu content';
-`
-
-export const Layout$Menu = styled.div`
-  background-color: #ddd;
-  grid-area: menu;
-`
-
-export const Layout$Header = styled.div`
-  backgroung-color: #eee;
-  grid-area: header;
-`
-
-export const Layout$Content = styled.div`
-  grid-area: content;
 `
