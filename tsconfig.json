@@ -1,19 +1,25 @@
 {
   "compilerOptions": {
-    "outDir": "build/dist",
+    "outDir": "public/assets/js",
     "module": "esnext",
-    "target": "es6",
-    "lib": ["es6", "dom"],
+    "target": "es2015",
+    "lib": ["esnext", "dom"],
     "jsx": "react",
     "moduleResolution": "node",
     "rootDir": "src",
-    "forceConsistentCasingInFileNames": true,
+    "forceConsistentCasingInFileNames": false,
     "noImplicitReturns": true,
     "noImplicitThis": true,
     "noImplicitAny": true,
     "strictNullChecks": true,
     "suppressImplicitAnyIndexErrors": true,
     "noUnusedLocals": true,
+    "baseUrl": "./src",
+    "paths": {
+      "components/*": ["components/*"],
+      "reducers/*": ["reducers/*"],
+      "store/*": ["store/*"],
+    }
   },
   "exclude": [
     "node_modules"

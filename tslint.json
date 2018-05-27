@@ -8,7 +8,10 @@
     "tslint-plugin-prettier"
   ],
   "rules": {
-    "no-unused-variable": true,
+    "interface-name": false,
+    "jsx-no-lambda": false,
+    "no-implicit-dependencies": false,
+    "no-submodule-imports": false,
     "prefer-const": true,
     "prettier": [
       true, {

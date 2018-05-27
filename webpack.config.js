@@ -1,21 +1,33 @@
 const path = require('path')
 const webpack = require('webpack')
-const devPort = process.env.port || 3000
+const devPort = process.env.port || 8000
+
+const srcPath = (subdir) => {
+  return path.join(__dirname, 'src', subdir)
+}
 
 module.exports = {
   entry: {
     app: [
-      './src/index.tsx'
+      './src/script.tsx'
     ]
   },
   output: {
     filename: '[name].bundle.js',
     chunkFilename: '[name].bundle.js',
-    path: __dirname + '/public',
+    path: __dirname + '/public/assets/js',
     publicPath: '/',
   },
+  resolve: {
+    alias: {
+      components: srcPath('components'),
+      reducers: srcPath('reducers'),
+      store: srcPath('store'),
+    },
+    extensions: ['.js', '.ts', '.tsx']
+  },
   devServer: {
-    contentBase: 'public/',
+    contentBase: '/public/assets/',
     historyApiFallback: true,
     port: devPort,
   },
