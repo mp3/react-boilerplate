@@ -18,11 +18,12 @@ const Button = styled.button`
   padding: 0px;
   outline: none;
   border: none;
+  border-radius: 4px;
   background-color: #ffffff;
   box-shadow: 0 5px 25px -10px rgba(5, 68, 102, 0.35);
-  font-weight: bold;
-  line-height: 112px;
+  font-size: 18px;
+  line-height: 50px;
   letter-spacing: -0.5px;
   text-align: center;
-  color: #22ccd8;
+  color: #000000;
 `

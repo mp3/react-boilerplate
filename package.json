@@ -3,8 +3,8 @@
   "private": true,
   "scripts": {
     "lint": "tslint --fix",
-    "watch": "NODE_ENV=production webpack --watch --mode production",
-    "build-dev": "webpack --mode development",
+    "watch": "webpack-dev-server --hot --mode development",
+    "build-dev": "webpack --mode development --watch --progress",
     "build": "NODE_ENV=production webpack --mode production",
     "test": "jest",
     "snapshot": "jest --updateSnapshot"

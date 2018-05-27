@@ -11,6 +11,5 @@ export default (props: any) => {
 }
 
 const Container = styled.div`
-  padding-top: 56px;
   text-align: center;
 `

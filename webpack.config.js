@@ -27,7 +27,7 @@ module.exports = {
     extensions: ['.js', '.ts', '.tsx']
   },
   devServer: {
-    contentBase: '/public/assets/',
+    contentBase: './public/',
     historyApiFallback: true,
     port: devPort,
   },
