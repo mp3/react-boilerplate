@@ -3,11 +3,10 @@
   "private": true,
   "scripts": {
     "lint": "tslint --fix",
-    "watch": "webpack-dev-server --hot --mode development",
-    "build-dev": "webpack --mode development --watch --progress",
-    "build": "NODE_ENV=production webpack --mode production",
-    "test": "jest",
-    "snapshot": "jest --updateSnapshot"
+    "watch": "webpack-dev-server --hot --mode development --watch --progress",
+    "build-dev": "webpack --mode development --progress",
+    "build": "NODE_ENV=production webpack --mode production --progress",
+    "test": "jest"
   },
   "jest": {
     "transform": {
