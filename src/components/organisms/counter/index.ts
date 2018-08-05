@@ -16,9 +16,12 @@ const mapStateToProps = (state: RootState, props: OuterProps): Props => {
   }
 }
 
-const enhancer: any = connect(mapStateToProps, {
-  add: CounterActions.add,
-  increment: CounterActions.increment
-})
+const enhancer: any = connect(
+  mapStateToProps,
+  {
+    add: CounterActions.add,
+    increment: CounterActions.increment
+  }
+)
 
 export default enhancer(Counter)
