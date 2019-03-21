@@ -1,53 +1,49 @@
 import Button from 'components/atoms/Button'
-import DefaultLayout from 'components/templates/DefaultLayout'
 import * as React from 'react'
 import styled from 'styled-components'
 
 interface Props {
   value: number
-  add(n: number): void
+  add(value: number): void
   increment(): void
 }
 
-export default function Counter(props: Props) {
-  const { add, increment } = props
+export default (props: Props) => {
+  const { value, add, increment } = props
+
   return (
-    <DefaultLayout>
-      <Container>
-        <Title>React + Redux Sample</Title>
-        <Value>value: {props.value}</Value>
-        <ButtonsContainer>
-          <Button
-            text="add:3"
-            onClick={(ev: any) => {
-              add(3)
-            }}
-          />
-          &nbsp;
-          <Button
-            text="increment"
-            onClick={(ev: any) => {
-              increment()
-            }}
-          />
-        </ButtonsContainer>
-      </Container>
-    </DefaultLayout>
+    <Container>
+      <Title>{'React + Redux'}</Title>
+      <Value>{`value: ${value}`}</Value>
+      <ButtonContainer>
+        <Button text={'add:3'} onClick={() => add(3)} />
+        <Button text={'increment'} onClick={() => increment()} />
+      </ButtonContainer>
+    </Container>
   )
 }
 
 const Container = styled.div`
   padding: 10px;
+  text-align: center;
 `
 
 const Title = styled.h1`
+  margin-bottom: 20px;
+  font-size: 32px;
   color: #333333;
 `
 
 const Value = styled.span`
+  margin-bottom: 20px;
+  font-size: 24px;
   color: #333333;
 `
 
-const ButtonsContainer = styled.div`
+const ButtonContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+  width: 460px;
+  margin: 0 auto;
   padding: 20px;
 `

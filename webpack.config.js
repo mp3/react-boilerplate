@@ -1,6 +1,7 @@
 const path = require('path')
 const webpack = require('webpack')
-const devPort = process.env.port || 8000
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const CleanWebpackPlugin = require('clean-webpack-plugin')
 
 const srcPath = (subdir) => {
   return path.join(__dirname, 'src', subdir)
@@ -9,27 +10,31 @@ const srcPath = (subdir) => {
 module.exports = {
   entry: {
     app: [
-      './src/script.tsx'
-    ]
+      './src/script.tsx',
+    ],
   },
   output: {
-    filename: '[name].bundle.js',
-    chunkFilename: '[name].bundle.js',
-    path: __dirname + '/public/assets/js',
+    filename: 'js/[name].bundle.js',
+    chunkFilename: 'js/[contenthash].bundle.js',
+    path: __dirname + '/public',
     publicPath: '/',
+  },
+  optimization: {
+    splitChunks: {
+      name: 'module',
+      chunks: 'async',
+    },
   },
   resolve: {
     alias: {
       components: srcPath('components'),
+      constants: srcPath('constants'),
       reducers: srcPath('reducers'),
       store: srcPath('store'),
+      types: srcPath('types'),
+      utils: srcPath('utils'),
     },
-    extensions: ['.js', '.ts', '.tsx']
-  },
-  devServer: {
-    contentBase: './public/',
-    historyApiFallback: true,
-    port: devPort,
+    extensions: ['.js', '.ts', '.tsx'],
   },
   module: {
     rules: [
@@ -46,9 +51,20 @@ module.exports = {
       {
         test: /\.tsx?$/,
         use: 'ts-loader',
-        exclude: /node_modules/,
+        exclude: /(node_modules)/,
       },
     ],
   },
-  plugins: [],
+  plugins: [
+    new webpack.DefinePlugin({
+      'precess.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
+    }),
+    new HtmlWebpackPlugin({
+      inject: 'body',
+      template: 'src/index.html'
+    }),
+    new CleanWebpackPlugin({
+      cleanOnceBeforeBuildPatterns: ['public/js']
+    }),
+  ],
 }

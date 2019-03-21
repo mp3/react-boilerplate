@@ -1,15 +1,9 @@
 import Counter from 'components/organisms/counter'
+import DefaultLayout from 'components/templates/DefaultLayout'
 import * as React from 'react'
-import styled from 'styled-components'
 
-export default (props: any) => {
-  return (
-    <Container>
-      <Counter />
-    </Container>
-  )
-}
-
-const Container = styled.div`
-  text-align: center;
-`
+export default () => (
+  <DefaultLayout>
+    <Counter />
+  </DefaultLayout>
+)

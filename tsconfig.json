@@ -1,8 +1,8 @@
 {
   "compilerOptions": {
-    "outDir": "public/assets/js",
+    "outDir": "public/js",
     "module": "esnext",
-    "target": "es2015",
+    "target": "es5",
     "lib": ["esnext", "dom"],
     "jsx": "react",
     "moduleResolution": "node",
@@ -17,8 +17,11 @@
     "baseUrl": "./src",
     "paths": {
       "components/*": ["components/*"],
+      "constants/*": ["constants/*"],
       "reducers/*": ["reducers/*"],
       "store/*": ["store/*"],
+      "types/*": ["types/*"],
+      "utils/*": ["utils/*"],
     }
   },
   "exclude": [

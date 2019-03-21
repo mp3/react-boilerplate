@@ -3,11 +3,12 @@ import styled from 'styled-components'
 
 interface Props {
   text: string
-  onClick?: (event: any) => void
+  onClick?: (event?: React.MouseEvent) => void | Promise<void>
 }
 
 export default (props: Props) => {
   const { text, onClick } = props
+
   return <Button onClick={onClick}>{text}</Button>
 }
 

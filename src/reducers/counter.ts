@@ -1,5 +1,4 @@
 // Action
-
 const ADD = 'counter/add'
 const INCREMENT = 'counter/increment'
 
@@ -17,7 +16,7 @@ interface Increment {
 type Action = Add | Increment
 
 // Action Creator
-export function add(amount: number): Add {
+export const add = (amount: number): Add => {
   return {
     payload: {
       amount
@@ -26,13 +25,13 @@ export function add(amount: number): Add {
   }
 }
 
-export function increment(): Increment {
+export const increment = (): Increment => {
   return {
     type: INCREMENT
   }
 }
 
-// state
+// State
 export interface State {
   value: number
 }

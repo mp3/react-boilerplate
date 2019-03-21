@@ -1,18 +1,18 @@
 import * as assert from 'assert'
-import counter, { add, increment } from '../counter'
+import counter, * as CounterAction from 'reducers/counter'
 
 test('counter/add', () => {
+  const add = CounterAction.add
   const initialState = counter(undefined, add(0))
   assert(initialState.value === 0)
-  const add3 = add(3)
-  const ret = counter(initialState, add3)
-  assert(ret.value === 3)
+  const ret = counter(initialState, add(6))
+  assert(ret.value === 6)
 })
 
 test('counter/increment', () => {
+  const increment = CounterAction.increment
   const initialState = counter(undefined, increment())
   assert(initialState.value === 1)
-  const inc = increment()
-  const ret = counter(initialState, inc)
+  const ret = counter(initialState, increment())
   assert(ret.value === 2)
 })

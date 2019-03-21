@@ -1,7 +1,7 @@
 import Counter from 'components/organisms/counter/Counter'
 import { connect } from 'react-redux'
 import { State as RootState } from 'reducers'
-import * as CounterActions from 'reducers/counter'
+import * as CounterAction from 'reducers/counter'
 
 // tslint:disable-next-line
 interface OuterProps {}
@@ -16,11 +16,11 @@ const mapStateToProps = (state: RootState, props: OuterProps): Props => {
   }
 }
 
-const enhancer: any = connect(
+const enhancer = connect(
   mapStateToProps,
   {
-    add: CounterActions.add,
-    increment: CounterActions.increment
+    add: CounterAction.add,
+    increment: CounterAction.increment
   }
 )
 
