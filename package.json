@@ -2,7 +2,7 @@
   "name": "jinji-galaxy",
   "private": true,
   "scripts": {
-    "watch": "webpack-dev-server --mode development --progress",
+    "dev": "webpack-dev-server --mode development --progress",
     "build": "NODE_ENV=production webpack --mode production --progress",
     "build-dev": "webpack --mode development --progress",
     "test": "jest --silent --verbose",

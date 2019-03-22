@@ -5,23 +5,23 @@ Single Page Application boilerplate
 ## Preparation
 
 ```
-yarn
+$ yarn
 ```
 
 ## Development
 
 ```
-yarn watch
+$ yarn dev
 ```
 
 ## Test
 
 ```
-yarn test
+$ yarn test
 ```
 
 ## Production Build
 
 ```
-yarn build
+$ yarn build
 ```
