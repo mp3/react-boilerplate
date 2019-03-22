@@ -67,4 +67,7 @@ module.exports = {
       cleanOnceBeforeBuildPatterns: ['public/js']
     }),
   ],
+  devServer: {
+    historyApiFallback: true
+  }
 }
