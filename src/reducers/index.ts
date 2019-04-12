@@ -1,7 +1,7 @@
 import counter, { State as CounterState } from 'reducers/counter'
 import { combineReducers } from 'redux'
 
-export interface State {
+export type State = {
   rootReducer: {
     counter: CounterState
   }

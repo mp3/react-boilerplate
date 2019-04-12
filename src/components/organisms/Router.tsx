@@ -7,7 +7,7 @@ import createStore from 'store/createStore'
 const history = createBrowserHistory()
 const store = createStore(history)
 
-interface Props {
+type Props = {
   children: JSX.Element
 }
 

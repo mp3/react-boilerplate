@@ -2,7 +2,7 @@ import Button from 'components/atoms/Button'
 import * as React from 'react'
 import styled from 'styled-components'
 
-interface Props {
+type Props = {
   value: number
   add(value: number): void
   increment(): void

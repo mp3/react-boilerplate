@@ -4,9 +4,9 @@ import { State as RootState } from 'reducers'
 import * as CounterAction from 'reducers/counter'
 
 // tslint:disable-next-line
-interface OuterProps {}
+type OuterProps = {}
 
-interface Props {
+type Props = {
   value: number
 }
 

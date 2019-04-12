@@ -1,7 +1,7 @@
 import * as React from 'react'
 import styled from 'styled-components'
 
-interface Props {
+type Props = {
   text: string
   onClick?: (event?: React.MouseEvent) => void | Promise<void>
 }

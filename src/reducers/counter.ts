@@ -2,14 +2,14 @@
 const ADD = 'counter/add'
 const INCREMENT = 'counter/increment'
 
-interface Add {
+type Add = {
   type: typeof ADD
   payload: {
     amount: number
   }
 }
 
-interface Increment {
+type Increment = {
   type: typeof INCREMENT
 }
 
@@ -32,7 +32,7 @@ export const increment = (): Increment => {
 }
 
 // State
-export interface State {
+export type State = {
   value: number
 }
 

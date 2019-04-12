@@ -1,5 +1,5 @@
 export type ExampleType = 'example'
 
-export interface Example {
+export type Example = {
   example: Example
 }
